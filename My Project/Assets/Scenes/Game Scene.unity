@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityPrefabs:
-  - {fileID: 1003329495079105171, guid: 27521827f39ccf84da9ae306ace1b09b, type: 3}
-  - {fileID: 1003329495079105171, guid: 8bcb9bb2a30186142beeb356189e7763, type: 3}
+  - {fileID: 1632310498399672204, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
+  - {fileID: 1632310498399672204, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
 --- !u!4 &123733272
 Transform:
   m_ObjectHideFlags: 0

@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] entityPrefabs;
-    int rangeX = -40;
+    int rangeX = -200;
     int rangeY = 12;
-    int rangeZ = 50;
+    int rangeZ = 100;
 
     private float startDelay = 2;
     private float spawnInterval = 5.0f;
