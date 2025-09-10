@@ -13,7 +13,7 @@ public class ProjectileSpeed : MonoBehaviour
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-        if (transform.position.x < leftBound)
+        if (transform.position.x < leftBound)    //Destroy bullet if it does hit enemy after a while
         {
             Destroy(gameObject);
         }
@@ -22,7 +22,7 @@ public class ProjectileSpeed : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))                 //Check collition with enemy collider
         {
             var enemy = other.GetComponent<DetectCollision>();
             if (enemy == null) return;
@@ -33,10 +33,10 @@ public class ProjectileSpeed : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            else if (gameObject.CompareTag("Slow"))
+            else if (gameObject.CompareTag("Slow"))    //Special bullet that slows enemy
             {
                 var enemySpeed = other.GetComponent<EnemyMovement>();
-                enemySpeed.speed /= 2;
+                enemySpeed.horizontalSpeed /= 2;
                 Destroy(gameObject);
             }
             

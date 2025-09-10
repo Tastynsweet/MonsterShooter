@@ -7,31 +7,26 @@ public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private float speed = 15.0f;
     private float horizontalInput;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        float originalXrot = transform.eulerAngles.x;   //Save x and z rotation
+        float originalZrot = transform.eulerAngles.z;
         float rotateAmount = Time.deltaTime * horizontalInput * speed;
-        float rotLimit = 60.0f;
+        float rotLimit = 40.0f;
 
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, rotateAmount);
         
         float currentRotation = transform.eulerAngles.y;
  
-        if (currentRotation < 360 - rotLimit && currentRotation > 180)
+        if (currentRotation < 360 - rotLimit && currentRotation > 180)   //rotation limit
         {
-            transform.rotation = Quaternion.Euler(0, 360 - rotLimit, 0);
+            transform.rotation = Quaternion.Euler(originalXrot, 360 - rotLimit, originalZrot);
         }
         else if (currentRotation > rotLimit && currentRotation <= 180)
         {
-            transform.rotation = Quaternion.Euler(0, rotLimit, 0);
+            transform.rotation = Quaternion.Euler(originalXrot, rotLimit, originalZrot);
         }
   
 

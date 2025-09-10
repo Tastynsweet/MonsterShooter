@@ -8,6 +8,7 @@ public class ProjectileSpawn : MonoBehaviour
     [SerializeField] float time;
     private float timer = 100.0f;
 
+    public CameraShake shake;
     // Update is called once per frame
     void Update()
     {
@@ -16,8 +17,9 @@ public class ProjectileSpawn : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                StartCoroutine(shake.ScreenShake());           //Shake camera when firing
                 Instantiate(projectilePrefab, transform.position, transform.rotation);
-                timer = 0;
+                timer = 0;          //Set firing delay
             }
         }
     }

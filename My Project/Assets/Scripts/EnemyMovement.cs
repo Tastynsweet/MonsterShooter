@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 15.0f;
+    public float horizontalSpeed = 10.0f;
+    public float verticalSpeed = -10.0f;
+    public float minY = -12f;
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        var player = other.GetComponent<PlayerHealth>();
-        if (player == null) return;
-
-        player.takeDamage();
-        Destroy(gameObject);
+        transform.Translate(Vector3.forward * horizontalSpeed * Time.deltaTime);
+        if (transform.position.y < minY)
+        {
+            transform.Translate(Vector3.up * Mathf.Abs(verticalSpeed) * Time.deltaTime);
+        }
     }
 
 }

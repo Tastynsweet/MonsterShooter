@@ -15,15 +15,12 @@ public class WeaponSwitch : MonoBehaviour
 
     [SerializeField] GameObject Perspective;
     private float zPos = -0.7f;
-
+    public CameraShake cameraShake;
     //private bool weapon1Active = true;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        weapon1.enabled = true;
+        weapon1.enabled = true;        //Players start with the middle cannon
         weapon2.enabled = false;
         weapon3.enabled = false;
 
@@ -32,26 +29,28 @@ public class WeaponSwitch : MonoBehaviour
         bullet3.enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))    //Switch between usable weapons
         {
             SwitchWeapon("Q");
 
             Perspective.transform.position = new Vector3(Perspective.transform.position.x, Perspective.transform.position.y, -30f + zPos);
+            cameraShake.UpdateOriginalPosition(Perspective.transform.position);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
             SwitchWeapon("W");
 
             Perspective.transform.position = new Vector3(Perspective.transform.position.x, Perspective.transform.position.y, zPos);
+            cameraShake.UpdateOriginalPosition(Perspective.transform.position);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchWeapon("E");
 
             Perspective.transform.position = new Vector3(Perspective.transform.position.x, Perspective.transform.position.y, 30f + zPos);
+            cameraShake.UpdateOriginalPosition(Perspective.transform.position);
         }
     }
     

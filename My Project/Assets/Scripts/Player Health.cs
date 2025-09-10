@@ -1,26 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int health = 10;
-    SceneManagment defeatGameScene;
-    void Update()
+    [SerializeField] int health;
+    private HashSet<GameObject> enemiesReached = new();   //Keep track of repeated enemies
+    public SceneManagment defeatGameScene;
+
+    public void PlayerTakeDamage()
     {
+        health--;
+        Debug.Log("Player Damaged. New health is " + health);
+
         if (health <= 0)
         {
             defeatGameScene.DefeatScene();
+            Debug.Log("You Lose");
         }
     }
 
-    public void takeDamage()
+    public void OnTriggerEnter(Collider other)
     {
-        health--;
-        Debug.Log("Player Damaged");
-        if (health <= 0)
+        if (other.CompareTag("Enemy"))
         {
-            Debug.Log("You Lose");
+            if (!enemiesReached.Contains(other.GameObject()))
+            {
+                enemiesReached.Add(other.GameObject());
+                Debug.Log("Added enemies to hash");
+
+                PlayerTakeDamage();
+                Destroy(other.gameObject);
+            }
+            
         }
     }
 }
