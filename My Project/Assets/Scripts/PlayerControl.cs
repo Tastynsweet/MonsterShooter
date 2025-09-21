@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour
         float originalXrot = transform.eulerAngles.x;   //Save x and z rotation
         float originalZrot = transform.eulerAngles.z;
         float rotateAmount = Time.deltaTime * horizontalInput * speed;
-        float rotLimit = 40.0f;
+        float rotLimit = 35.0f;
 
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, rotateAmount);

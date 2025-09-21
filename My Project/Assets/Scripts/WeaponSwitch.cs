@@ -24,14 +24,14 @@ public class WeaponSwitch : MonoBehaviour
         weapon2.enabled = false;
         weapon3.enabled = false;
 
-        bullet1.enabled = true;
-        bullet2.enabled = false;
-        bullet3.enabled = false;
+        bullet1.isActiveWeapon = true;
+        bullet2.isActiveWeapon = false;
+        bullet3.isActiveWeapon = false;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))    //Switch between usable weapons
+        if (Input.GetKeyDown(KeyCode.Q))    //Switch between usable weapons via camera
         {
             SwitchWeapon("Q");
 
@@ -59,23 +59,23 @@ public class WeaponSwitch : MonoBehaviour
         weapon1.enabled = false;
         weapon2.enabled = false;
         weapon3.enabled = false;
-        bullet1.enabled = false;
-        bullet2.enabled = false;
-        bullet3.enabled = false;
+        bullet1.isActiveWeapon = false;
+        bullet2.isActiveWeapon = false;
+        bullet3.isActiveWeapon = false;
 
-        switch (weaponLetter)
+        switch (weaponLetter)                                   //Disable weapons when not in use but keep cooldown on
         {
             case "Q" :
                 weapon2.enabled = true;
-                bullet2.enabled = true;
+                bullet2.isActiveWeapon = true;
                 break;
             case "W":
                 weapon1.enabled = true;
-                bullet1.enabled = true;
+                bullet1.isActiveWeapon = true;
                 break;
             case "E":
                 weapon3.enabled = true;
-                bullet3.enabled = true;
+                bullet3.isActiveWeapon = true;
                 break;
         }
     }

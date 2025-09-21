@@ -6,18 +6,27 @@ public class ProjectileSpeed : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] int damage;
-    private float leftBound = -50.0f;
+    [SerializeField] float lifetime;
+    float customGravity = -8f;
+    Rigidbody body;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        body = GetComponent<Rigidbody>();
+    }
 
-        if (transform.position.x < leftBound)    //Destroy bullet if it does hit enemy after a while
-        {
-            Destroy(gameObject);
-        }
+    void Start()
+    {
+        body.velocity = transform.forward * speed;
+        
+        body.useGravity = false;
 
+        Destroy(gameObject, lifetime);                                        //Destroy object after n seconds
+    }
+
+    void FixedUpdate()
+    {
+        body.AddForce(Vector3.up * customGravity, ForceMode.Acceleration);    //Use custom gravity pull
     }
 
     private void OnTriggerEnter(Collider other)

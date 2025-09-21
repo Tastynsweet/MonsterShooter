@@ -5,6 +5,7 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
     private Transform playerTransform;
+    private DetectCollision enemyH;
 
     void Start()
     {
@@ -13,13 +14,23 @@ public class LookAtPlayer : MonoBehaviour
         {
             playerTransform = playerObject.transform;
         }
+        enemyH = GetComponent<DetectCollision>();
     }
 
     void Update()
     {
-        if (playerTransform != null)
+        if (playerTransform != null && StillHealthy())
         {
             transform.LookAt(playerTransform.transform);    //Look at player at all times
         }
+    }
+
+    private bool StillHealthy()
+    {
+        if (enemyH.healthCounter <= 0)
+        {
+            return false;
+        }
+        return true;
     }
 }

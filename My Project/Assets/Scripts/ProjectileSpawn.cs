@@ -9,17 +9,21 @@ public class ProjectileSpawn : MonoBehaviour
     private float timer = 100.0f;
 
     public CameraShake shake;
+    public bool isActiveWeapon = false;
+
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-       if (timer >= time)
+        if (!isActiveWeapon) return;                                                        //Only one weapon at a time
+
+        if (timer >= time)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                StartCoroutine(shake.ScreenShake());           //Shake camera when firing
+                StartCoroutine(shake.ScreenShake());                                        //Shake camera when firing
                 Instantiate(projectilePrefab, transform.position, transform.rotation);
-                timer = 0;          //Set firing delay
+                timer = 0;                                                                  //Set firing delay
             }
         }
     }
