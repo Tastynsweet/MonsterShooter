@@ -47,6 +47,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5678036629369579437, guid: e5f562ce78f17234cbf7995435584a5a, type: 3}
   time: 3
   shake: {fileID: 0}
+  isActiveWeapon: 0
 --- !u!1 &9095285478446795322
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +61,7 @@ GameObject:
   - component: {fileID: 6079007497780033831}
   - component: {fileID: 4066296674367253787}
   - component: {fileID: 7661462356049757924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +113,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c839e45f2d1564440ad2f1b828847dc8, type: 2}
+  - {fileID: 2100000, guid: 694fe6f02fc0a3a4d9feab4ddb6029cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

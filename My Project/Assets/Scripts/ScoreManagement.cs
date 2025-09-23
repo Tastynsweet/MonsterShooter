@@ -7,7 +7,9 @@ public class ScoreManagement : MonoBehaviour
 {
     public static ScoreManagement instance;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI healthText; 
     int score = 0;
+    int healthScore = 10;
 
     private void Awake()
     {
@@ -16,6 +18,7 @@ public class ScoreManagement : MonoBehaviour
     void Start()
     {
         scoreText.text = score.ToString();
+        healthText.text = "x" + healthScore.ToString();
     }
 
     // Update is called once per frame
@@ -23,5 +26,11 @@ public class ScoreManagement : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+    }
+
+    public void removeHealth()
+    {
+        healthScore--;
+        healthText.text = "x" + healthScore.ToString();
     }
 }

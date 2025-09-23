@@ -25,13 +25,6 @@ public class SceneManagment : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
-
-    public void QuitGame()
-    {
-        Debug.Log("Game Quit");
-        Application.Quit();
-    }
-
     
 
     

@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     int rangeY = -100;
     int rangeZ = 100;
 
-    private float startDelay = 2;
+    private float startDelay = 16f;
     private float spawnInterval = 5.0f;
 
     public float minDistanceFromNextSpawn = 10.0f;
@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnRandom", startDelay, spawnInterval);    //Begin spawning enemies after 2 seconds
+        InvokeRepeating("SpawnRandom", startDelay, spawnInterval);    //Begin spawning enemies after 10 seconds
     }
         
     void SpawnRandom()

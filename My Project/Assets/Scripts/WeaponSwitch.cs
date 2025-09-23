@@ -14,9 +14,10 @@ public class WeaponSwitch : MonoBehaviour
     [SerializeField] ProjectileSpawn bullet3;
 
     [SerializeField] GameObject Perspective;
+
+    private string currentWeapon = "W";
     private float zPos = -0.7f;
     public CameraShake cameraShake;
-    //private bool weapon1Active = true;
 
     void Start()
     {
@@ -31,8 +32,9 @@ public class WeaponSwitch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))    //Switch between usable weapons via camera
+        if (Input.GetKeyDown(KeyCode.Q) && currentWeapon != "Q")    //Switch between usable weapons via camera
         {
+            currentWeapon = "Q";
             SwitchWeapon("Q");
 
             Perspective.transform.position = new Vector3(Perspective.transform.position.x, Perspective.transform.position.y, -30f + zPos);
@@ -40,6 +42,7 @@ public class WeaponSwitch : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
+            currentWeapon = "W";
             SwitchWeapon("W");
 
             Perspective.transform.position = new Vector3(Perspective.transform.position.x, Perspective.transform.position.y, zPos);
@@ -47,6 +50,7 @@ public class WeaponSwitch : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
+            currentWeapon = "E";
             SwitchWeapon("E");
 
             Perspective.transform.position = new Vector3(Perspective.transform.position.x, Perspective.transform.position.y, 30f + zPos);

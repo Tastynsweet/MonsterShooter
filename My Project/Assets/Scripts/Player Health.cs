@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public void PlayerTakeDamage()
     {
         health--;
+        ScoreManagement.instance.removeHealth();
         Debug.Log("Player Damaged. New health is " + health);
 
         if (health <= 0)
