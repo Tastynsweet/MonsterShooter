@@ -5,26 +5,58 @@ using UnityEngine;
 public class ProjectileSpawn : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    [SerializeField] float time;
+    [SerializeField] float fireCooldown = 1;
     private float timer = 100.0f;
+    private string targetWord = "Priming";
+    private string userInput = "";
 
     public CameraShake shake;
     public bool isActiveWeapon = false;
+    private bool firstShot = true;
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (!isActiveWeapon) return;                                                        //Only one weapon at a time
+        if (!isActiveWeapon) return;                                                                    //Only one weapon at a time
 
-        if (timer >= time)
+        if (timer >= fireCooldown)
         {
+
+            foreach (char c in Input.inputString)
+            {
+                if (char.IsLetter(c))
+                {
+                    userInput += char.ToLower(c);
+                }
+            }
+
+            if (userInput.Length > targetWord.Length)                                                   //only compare the last couple inputs from user
+            {
+                userInput = userInput.Substring(userInput.Length - targetWord.Length);
+            }
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                StartCoroutine(shake.ScreenShake());                                        //Shake camera when firing
-                Instantiate(projectilePrefab, transform.position, transform.rotation);
-                timer = 0;                                                                  //Set firing delay
+                if (firstShot)                                                                          //Fire without typing only the first time
+                {
+                    FireProjectile();                                                            
+                    firstShot = false;
+                }
+                if (userInput.Equals(targetWord, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    FireProjectile();
+                    userInput = "";                                                                     //reset user input
+                }
+                
             }
         }
+    }
+
+    private void FireProjectile()
+    {
+        StartCoroutine(shake.ScreenShake());                                                            //Shake camera when firing
+        Instantiate(projectilePrefab, transform.position, transform.rotation);
+        timer = 0;                                                                                      //Set firing delay
+
     }
 }

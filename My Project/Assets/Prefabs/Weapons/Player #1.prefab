@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 3316672681142030258}
   - component: {fileID: 4908939106223481560}
   - component: {fileID: 8093799715379382297}
+  - component: {fileID: 3783077347866943315}
   m_Layer: 7
   m_Name: Player #1
   m_TagString: Untagged
@@ -169,3 +170,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+--- !u!114 &3783077347866943315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8584941987763336282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966d7eb0705c9684699a56ef85ea85d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trembleAmount: 0.2
+  trembleSpeed: 10

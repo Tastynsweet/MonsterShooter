@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float horizontalSpeed = 10.0f;
+
+    public float horizontalSpeed;
     public float verticalSpeed = -10.0f;
     public float minY = -12f;
 
-    private DetectCollision enemyHealth;
+    [SerializeField] private DetectCollision enemyHealth;
 
-    void Start()
+    void Awake()
     {
-        enemyHealth = GetComponent<DetectCollision>();
+        horizontalSpeed = Random.Range(-9, -12);
     }
+
     void Update()
     {
-        transform.Translate(horizontalSpeed * Time.deltaTime * Vector3.forward);
+        transform.Translate(horizontalSpeed * Time.deltaTime * Vector3.left);
         if (enemyHealth.healthCounter >- 0 && transform.position.y < minY)
         {
             transform.Translate(Mathf.Abs(verticalSpeed) * Time.deltaTime * Vector3.up);        //object comes into view from below camera
@@ -25,6 +27,11 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.Translate(Mathf.Abs(verticalSpeed) * Time.deltaTime * Vector3.down);
             horizontalSpeed = 0;
+            if (enemyHealth.pastThreshold == true)
+            {
+                Destroy(gameObject);
+                Debug.Log("Enemy destroyed");
+            }
         }
     }
 

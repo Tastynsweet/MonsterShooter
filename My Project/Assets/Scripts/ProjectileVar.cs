@@ -44,7 +44,7 @@ public class ProjectileSpeed : MonoBehaviour
             }
             else if (gameObject.CompareTag("Slow"))    //Special bullet that slows enemy
             {
-                var enemySpeed = other.GetComponent<EnemyMovement>();
+                var enemySpeed = other.GetComponentInParent<EnemyMovement>();
                 enemySpeed.horizontalSpeed /= 2;
                 Destroy(gameObject);
             }

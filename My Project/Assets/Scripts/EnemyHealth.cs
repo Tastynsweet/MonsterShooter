@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    public int healthCounter = 10;
+    public int healthCounter;
     private Collider enemyCollider;
     private bool isDead = false;
+    public bool pastThreshold = false;
+
+    private ObjectShake shakeEnemy;
+    
+
+    void Awake()
+    {
+        healthCounter = Random.Range(10, 15);
+    }
 
     void Start()
     {
         enemyCollider = GetComponent<Collider>();
+        shakeEnemy = GetComponent<ObjectShake>();
     }
 
     void Update()
     {
         if (isDead)
         {
+            shakeEnemy.ShakeObject();
             enemyCollider.enabled = false;                  //Remove collision
+
             if (transform.position.y < -100f)               //Delete object once out of view
             {
+                pastThreshold = true;
                 Destroy(gameObject);
-                Debug.Log("Enemy destroyed");
             }
         }
     }
