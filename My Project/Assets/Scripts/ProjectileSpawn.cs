@@ -7,12 +7,14 @@ public class ProjectileSpawn : MonoBehaviour
     public GameObject projectilePrefab;
     [SerializeField] float fireCooldown = 1;
     private float timer = 100.0f;
-    private string targetWord = "Priming";
+    private string targetWord = "Loading";
     private string userInput = "";
 
     public CameraShake shake;
     public bool isActiveWeapon = false;
-    private bool firstShot = true;
+
+    private bool firstShots = true;
+    [SerializeField] private int startingAmmo = 5;
 
     void Update()
     {
@@ -37,12 +39,17 @@ public class ProjectileSpawn : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (firstShot)                                                                          //Fire without typing only the first time
+                if (firstShots)                                                                          //Fire without typing only the first n times
                 {
-                    FireProjectile();                                                            
-                    firstShot = false;
+                    FireProjectile();
+                    startingAmmo--;
+                    if (startingAmmo <= 0)
+                    {
+                        firstShots = false;
+                        Debug.Log("Start Reloading");
+                    }
                 }
-                if (userInput.Equals(targetWord, System.StringComparison.OrdinalIgnoreCase))
+                else if (userInput.Equals(targetWord, System.StringComparison.OrdinalIgnoreCase))
                 {
                     FireProjectile();
                     userInput = "";                                                                     //reset user input
