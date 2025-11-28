@@ -19,8 +19,8 @@ TagManager:
   - Outline
   - 
   - 
-  - 
-  - 
+  - Background
+  - Pop up
   - 
   - 
   - 
@@ -44,4 +44,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2506118823
+    locked: 0
+  - name: UI
+    uniqueID: 2944815683
+    locked: 0
+  - name: Pop Up
+    uniqueID: 1574348337
     locked: 0

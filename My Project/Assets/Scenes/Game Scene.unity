@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 0.329
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.024240937, g: 0.004479489, b: 0.004479489, a: 0.329}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -537,13 +536,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -6629,7 +6630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 58.3337, y: -64.3337}
+  m_AnchoredPosition: {x: 58.33374, y: -64.33368}
   m_SizeDelta: {x: 77.3169, y: 77.3169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550108178
@@ -6873,13 +6874,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -11924,13 +11927,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -17152,6 +17157,18 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 7445711202482372221, guid: 9dcdeb17acff8a44ab3615eca186ff35, type: 3}
+    - target: {fileID: 9195306649855184680, guid: 4a5f6afd34bdfa044a5659ad78474003, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195306649855184680, guid: 4a5f6afd34bdfa044a5659ad78474003, type: 3}
+      propertyPath: trembleSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195306649855184680, guid: 4a5f6afd34bdfa044a5659ad78474003, type: 3}
+      propertyPath: trembleAmount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17674,13 +17691,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -22797,13 +22816,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -28884,12 +28905,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!4 &1770979024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4696833960159118260, guid: 250dc2dbe6246714f81925611d5e4f2d, type: 3}
@@ -29182,13 +29203,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -34646,6 +34669,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3783077347866943315, guid: d885d38193a4e3f459b83a7ea01878a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783077347866943315, guid: d885d38193a4e3f459b83a7ea01878a9, type: 3}
+      propertyPath: trembleSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783077347866943315, guid: d885d38193a4e3f459b83a7ea01878a9, type: 3}
+      propertyPath: trembleAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4150209347626905842, guid: d885d38193a4e3f459b83a7ea01878a9, type: 3}
       propertyPath: time
       value: 2
@@ -35300,6 +35335,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1156235050}
     m_Modifications:
+    - target: {fileID: 594420907656175757, guid: f3c858b99690f7c4faa243674052f006, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594420907656175757, guid: f3c858b99690f7c4faa243674052f006, type: 3}
+      propertyPath: trembleSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594420907656175757, guid: f3c858b99690f7c4faa243674052f006, type: 3}
+      propertyPath: trembleAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1857874779089195809, guid: f3c858b99690f7c4faa243674052f006, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.895
