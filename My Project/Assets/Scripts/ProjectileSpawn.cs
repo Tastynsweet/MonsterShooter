@@ -7,13 +7,13 @@ public class ProjectileSpawn : MonoBehaviour
     public GameObject projectilePrefab;
     [SerializeField] float fireCooldown = 1;
     private float timer = 100.0f;
-    private string targetWord = "Loading";
+    private string targetWord = "loading";
     private string userInput = "";
 
     public CameraShake shake;
     public bool isActiveWeapon = false;
 
-    private bool firstShots = true;
+    [SerializeField] private bool firstShots = true;
     [SerializeField] private int startingAmmo = 5;
 
     void Update()
@@ -45,13 +45,14 @@ public class ProjectileSpawn : MonoBehaviour
                     startingAmmo--;
                     if (startingAmmo <= 0)
                     {
-                        firstShots = false;
-                        Debug.Log("Start Reloading");
+                        firstShots = true;                                                              //Temporary: No reloading yet
+                        //Debug.Log("Start Reloading");
                     }
                 }
                 else if (userInput.Equals(targetWord, System.StringComparison.OrdinalIgnoreCase))
                 {
-                    FireProjectile();
+                    startingAmmo = 5;
+                    firstShots = true;
                     userInput = "";                                                                     //reset user input
                 }
                 
