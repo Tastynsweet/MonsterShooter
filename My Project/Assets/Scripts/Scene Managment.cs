@@ -6,28 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagment : MonoBehaviour
 {
+    private UIFade fadeUI;
+
     public void StartScene()
     {
-        SceneManager.LoadScene(0);
-    }
-
-    public void ControlScene()
-    {
-        SceneManager.LoadScene(1);
+        StartCoroutine(ChangeLevelCo("Start Menu"));
     }
 
     public void GameScene()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(ChangeLevelCo("Game Scene"));
     }
 
     public void DefeatScene()
     {
-        SceneManager.LoadScene(3);
+        StartCoroutine(ChangeLevelCo("Defeat Scene"));
     }
-    
 
-    
+    private IEnumerator ChangeLevelCo(string levelName)
+    {
+        GetFadeUI().DoFadeOut();
+
+        yield return GetFadeUI().changeAlphaCo;
+
+        SceneManager.LoadScene(levelName);
+    }
+
+    private UIFade GetFadeUI()
+    {
+        if (fadeUI == null)
+        {
+            fadeUI = FindFirstObjectByType<UIFade>();
+        }
+        return fadeUI;
+    }
+
 
 
 }

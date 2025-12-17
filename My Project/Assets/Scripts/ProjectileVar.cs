@@ -10,6 +10,8 @@ public class ProjectileSpeed : MonoBehaviour
     float customGravity = -8f;
     Rigidbody body;
 
+    public GameObject explosionPrefab;
+
     void Awake()
     {
         body = GetComponent<Rigidbody>();
@@ -37,6 +39,11 @@ public class ProjectileSpeed : MonoBehaviour
             if (enemy == null) return;
 
             enemy.TakeDamage(damage);
+
+            if (explosionPrefab != null)
+            {
+                Instantiate(explosionPrefab, transform.position, transform.rotation);
+            }
 
             if (gameObject.CompareTag("Normal"))
             {

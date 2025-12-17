@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileSpawn : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject explosionPrefab;
     [SerializeField] float fireCooldown = 1;
     private float timer = 100.0f;
     private string targetWord = "loading";
@@ -64,6 +65,7 @@ public class ProjectileSpawn : MonoBehaviour
     {
         StartCoroutine(shake.ScreenShake());                                                            //Shake camera when firing
         Instantiate(projectilePrefab, transform.position, transform.rotation);
+        Instantiate(explosionPrefab, transform.position + (transform.forward * 1.0f), transform.rotation);
         timer = 0;                                                                                      //Set firing delay
 
     }

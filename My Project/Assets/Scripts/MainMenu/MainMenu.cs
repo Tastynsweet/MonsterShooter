@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject backgroundDim;
 
     private GameObject activePanel;
+    private UIFade fadeUI;
     
 
     private void Update()
@@ -25,7 +26,7 @@ public class MainMenu : MonoBehaviour
     }
     public void playGame()
     {
-        SceneManager.LoadScene(GAME_SCENE, LoadSceneMode.Single);
+        StartCoroutine(ChangeLevelCo(GAME_SCENE));
     }
 
     public void quitGame()
@@ -72,5 +73,23 @@ public class MainMenu : MonoBehaviour
         {   
             backgroundDim.SetActive(false);
         }
+    }
+
+    private IEnumerator ChangeLevelCo(string levelName)
+    {
+        GetFadeUI().DoFadeOut();
+
+        yield return GetFadeUI().changeAlphaCo;
+
+        SceneManager.LoadScene(levelName);
+    }
+
+    private UIFade GetFadeUI()
+    {
+        if (fadeUI == null)
+        {
+            fadeUI = FindFirstObjectByType<UIFade>();
+        }
+        return fadeUI;
     }
 }
