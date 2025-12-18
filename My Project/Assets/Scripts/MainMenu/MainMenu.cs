@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    const string GAME_SCENE = "Game Scene";
+    const string GAME_SCENE = "Story Scene";
 
     [SerializeField] private GameObject menuPop;
     [SerializeField] private GameObject creditPop;
@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (activePanel != null && Input.GetKeyDown(KeyCode.Escape))
+        if (activePanel != null && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape)))
         {
             ClosePanel();
         }

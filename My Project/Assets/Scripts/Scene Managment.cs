@@ -13,9 +13,19 @@ public class SceneManagment : MonoBehaviour
         StartCoroutine(ChangeLevelCo("Start Menu"));
     }
 
+    public void StoryScene()
+    {
+        StartCoroutine(ChangeLevelCo("Story Scene"));
+    }
+
     public void GameScene()
     {
         StartCoroutine(ChangeLevelCo("Game Scene"));
+    }
+
+    public void StoryDefeatScene()
+    {
+        StartCoroutine(ChangeLevelCo("Death Card Scene"));
     }
 
     public void DefeatScene()
@@ -41,6 +51,10 @@ public class SceneManagment : MonoBehaviour
         return fadeUI;
     }
 
+    public void LoadLevel(string levelName)
+    {
+        StartCoroutine(ChangeLevelCo(levelName));
+    }
 
 
 }

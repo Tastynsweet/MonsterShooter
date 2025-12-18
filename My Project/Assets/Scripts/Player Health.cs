@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            defeatGameScene.DefeatScene();
+            defeatGameScene.StoryDefeatScene();
             Debug.Log("You Lose");
         }
     }

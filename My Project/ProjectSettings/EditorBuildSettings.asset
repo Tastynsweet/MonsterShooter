@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scene.unity
     guid: 550e4f97ad43b9e4ab465ab56dc20cf9
   - enabled: 1
+    path: Assets/Scenes/Story Scene.unity
+    guid: 3876dedd1c176074b807d6366361a4ad
+  - enabled: 1
     path: Assets/Scenes/Game Scene.unity
     guid: e72ed2c6cb7f7b74488b3832c09ef394
+  - enabled: 1
+    path: Assets/Scenes/Death Card Scene.unity
+    guid: 96fd30d0bf11ec34e9644466ca82d9df
   - enabled: 1
     path: Assets/Scenes/Defeat Scene.unity
     guid: f660c6eef017ce547977e94cbc8b0f6e
