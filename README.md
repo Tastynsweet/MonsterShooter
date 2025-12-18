@@ -16,7 +16,7 @@ The game is fully playable from start to finish, with all major mechanics implem
 - Visual effects and animations
 
 ## Current Status
-**Initial Conent complete.**
+**Initial Content complete.**
 The game is fully playable and feature-complete
 The only remaining work is:
 - Sound effects
@@ -35,7 +35,7 @@ The only remaining work is:
    ```bash
    git clone https://github.com/Tastynsweet/MonsterShooter.git
 2. Open the project in Unity
-3. Open [Main Menu] scene
+3. Open [Start Scene] scene
 4. Press play
 
 ## Built With
