@@ -10,11 +10,25 @@ public class PlayerHealth : MonoBehaviour
     private HashSet<GameObject> enemiesReached = new();   //Keep track of repeated enemies
     public SceneManagment defeatGameScene;
 
+    [SerializeField] private BeatingHeart[] heartImages;
+    [SerializeField] private float throbAmount;
+
     public void PlayerTakeDamage()
     {
         health--;
         ScoreManagement.instance.removeHealth();
         Debug.Log("Player Damaged. New health is " + health);
+
+        if (heartImages != null )                                     //Increase Heart Rate
+        {
+            foreach (BeatingHeart heart in heartImages)
+            {
+                if (heart != null)
+                {
+                    heart.IncreaseHeartRate(throbAmount);
+                }
+            }          
+        }
 
         if (health <= 0)
         {

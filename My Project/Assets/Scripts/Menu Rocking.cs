@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MenuRocking : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] private float bopAmount;
     [SerializeField] private float bopSpeed;
     [SerializeField] private float lerpSpeed;
@@ -19,7 +18,6 @@ public class MenuRocking : MonoBehaviour
         originalPos = rect.anchoredPosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float bop = Mathf.Sin(Time.time * bopSpeed) * bopAmount;                                              //Calculate Y offset
