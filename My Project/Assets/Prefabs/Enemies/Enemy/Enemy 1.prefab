@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: -10
   verticalSpeed: -10
-  minY: -12
+  minY: 7
   enemyHealth: {fileID: 1915722791276586377}
 --- !u!1001 &5517369587413432191
 PrefabInstance:
@@ -104,6 +104,14 @@ PrefabInstance:
     - target: {fileID: 2316684869611589484, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316684869611589484, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316684869611589484, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2316684869611589484, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
       propertyPath: m_LocalPosition.x
@@ -169,6 +177,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1632310498399672204, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5676850408547668267}
+    - targetCorrespondingSourceObject: {fileID: 1632310498399672204, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8220071718034372747}
   m_SourcePrefab: {fileID: 100100000, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}
 --- !u!114 &1915722791276586377 stripped
 MonoBehaviour:
@@ -200,6 +211,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trembleAmount: 0.3
   trembleSpeed: 10
+--- !u!114 &8220071718034372747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500528074484015347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1db41ff7959bf14690ed516a1c82607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  tilt: 1
+  squash: 0.05
 --- !u!224 &7833772910642378771 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2316684869611589484, guid: 45607a4a0e5eab54188bed46f08e5576, type: 3}

@@ -73,7 +73,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &7354214805473756562
 Canvas:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthCounter: 15
-  isDead: 0
+  pastThreshold: 0
 --- !u!114 &8733577739658129794
 MonoBehaviour:
   m_ObjectHideFlags: 0

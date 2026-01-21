@@ -6,7 +6,7 @@ public class ObjectDescent : MonoBehaviour
 {
     GameObject backgroundObject;
     [SerializeField] private float descentSpeed;
-    private float descentDelay = 3.0f;
+    private float descentDelay = 2.0f;
     private float timer = 0.0f;
 
     private ObjectShake shake;

@@ -7,7 +7,9 @@ public class ScoreManagement : MonoBehaviour
 {
     public static ScoreManagement instance;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI healthText; 
+
+    public UIHealthCounter healthCount;
+
     int score = 0;
     int healthScore = 10;
 
@@ -18,7 +20,6 @@ public class ScoreManagement : MonoBehaviour
     void Start()
     {
         scoreText.text = score.ToString();
-        healthText.text = "x" + healthScore.ToString();
     }
 
     // Update is called once per frame
@@ -30,7 +31,6 @@ public class ScoreManagement : MonoBehaviour
 
     public void removeHealth()
     {
-        healthScore--;
-        healthText.text = "x" + healthScore.ToString();
+        healthCount.changeSpriteOnDamage();
     }
 }

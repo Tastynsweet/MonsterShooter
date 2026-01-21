@@ -8,14 +8,14 @@ public class ProjectileSpawn : MonoBehaviour
     public GameObject explosionPrefab;
     [SerializeField] float fireCooldown = 1;
     private float timer = 100.0f;
-    private string targetWord = "loading";
+    private string targetWord = "rrrrrrrrrr";
     private string userInput = "";
 
     public CameraShake shake;
     public bool isActiveWeapon = false;
 
-    [SerializeField] private bool firstShots = true;
-    [SerializeField] private int startingAmmo = 5;
+    [SerializeField] private bool haveAmmo = true;
+    [SerializeField] private int currentAmmo = 5;
 
     void Update()
     {
@@ -40,20 +40,20 @@ public class ProjectileSpawn : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (firstShots)                                                                          //Fire without typing only the first n times
+                if (haveAmmo)                                                                          //Fire without typing only the first n times
                 {
                     FireProjectile();
-                    startingAmmo--;
-                    if (startingAmmo <= 0)
+                    currentAmmo--;
+                    if (currentAmmo <= 0)
                     {
-                        firstShots = true;                                                              //Temporary: No reloading yet
+                        haveAmmo = false;                                                              //Temporary: No reloading yet
                         //Debug.Log("Start Reloading");
                     }
                 }
                 else if (userInput.Equals(targetWord, System.StringComparison.OrdinalIgnoreCase))
                 {
-                    startingAmmo = 5;
-                    firstShots = true;
+                    currentAmmo = 5;
+                    haveAmmo = true;
                     userInput = "";                                                                     //reset user input
                 }
                 
